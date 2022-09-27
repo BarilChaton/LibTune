@@ -18,11 +18,11 @@ const Discover = () => {
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
-        <h2 className="font-bold text-3xl text-white text-left bg-blue-400 p-2 rounded-xl border-2 border-yellow-100">Discover {genreTitle}</h2>
+        <h2 className="font-bold text-3xl text-blue-700 text-left">Discover {genreTitle}</h2>
         <select
           onChange={() => {}}
           value=""
-          className="bg-blue-800 text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
+          className="bg-blue-700 text-white font-bold p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         >
           {genres.map((genre) => <option key={genre.value} value={genre.value}>{genre.title}</option>)}
         </select>
