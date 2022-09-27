@@ -27,7 +27,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
             handlePlay={handlePlayClick}
           />
         </div>
-        <img src={song.images?.coverart} alt="song_img" className='rounded-lg'/>
+        <img src={song.images?.coverart} alt="song_img" className="rounded-lg" />
       </div>
       <div className="mt-4 flex flex-col">
         <p className="font-semibold text-lg text-blue-700 truncate">
@@ -36,7 +36,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
           </Link>
         </p>
         <p className="text-sm truncate text-blue-800 mt-1">
-          <Link to={song.artist ? `/artists/${song?.artist[0]?.adamid}` : '/top-artists'}>
+          <Link to={song.artists ? `/artists/${song?.artists[0]?.adamid}` : '/top-artists'}>
             {song.subtitle}
           </Link>
         </p>
