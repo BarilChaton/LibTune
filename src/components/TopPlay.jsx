@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode } from "swiper";
+import { FreeMode } from 'swiper';
 
-import PlayPause from "./PlayPause";
-import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import PlayPause from './PlayPause';
+import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
 import 'swiper/css';
@@ -25,7 +25,7 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
         </Link>
       </div>
     </div>
-    <PlayPause 
+    <PlayPause
       isPlaying={isPlaying}
       activeSong={activeSong}
       song={song}
@@ -33,7 +33,7 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
       handlePlay={handlePlayClick}
     />
   </div>
-)
+);
 
 const TopPlay = () => {
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const TopPlay = () => {
   const divRef = useRef(null);
 
   useEffect(() => {
-    divRef.current.scrollIntoView({ behaviour: 'smooth'});
+    divRef.current.scrollIntoView({ behaviour: 'smooth' });
   });
 
   const topPlays = data?.slice(0, 5);
@@ -57,7 +57,7 @@ const TopPlay = () => {
   };
 
   return (
-    <div ref={divRef} className='xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col sm:mt-0 mt-10'>
+    <div ref={divRef} className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] max-w-full flex flex-col sm:mt-0 mt-10">
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-blue-700 font-bold text-2xl">Top Charts</h2>
@@ -65,14 +65,14 @@ const TopPlay = () => {
         </div>
         <div className="mt-4 flex flex-col gap-1">
           {topPlays?.map((song, i) => (
-            <TopChartCard 
-            key={song.key}
-            song={song}
-            i={i}
-            isPlaying={isPlaying}
-            activeSong={activeSong}
-            handlePauseClick={handlePauseClick}
-            handlePlayClick={() => handlePlayClick(song, i)}
+            <TopChartCard
+              key={song.key}
+              song={song}
+              i={i}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              handlePauseClick={handlePauseClick}
+              handlePlayClick={() => handlePlayClick(song, i)}
             />
           ))}
         </div>
@@ -106,7 +106,7 @@ const TopPlay = () => {
         </Swiper>
       </div>
     </div>
-  )
+  );
 };
 
 export default TopPlay;

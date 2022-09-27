@@ -10,7 +10,7 @@ return (
       <img 
         src={artistId ? artist.artwork?.url.replace('{w}', '500').replace('{h}', '500') : songData?.images?.coverart} 
         alt="art"
-        className="sm:w-52 w-32 sm:h-52 h-32 rounded-full object-overflow shadow-md shadow-blue-500"
+        className="sm:w-52 w-32 mt-2 ml-2 sm:h-52 h-32 rounded-full object-overflow shadow-md shadow-blue-500"
       />
       <div className="ml-5">
         <p className="font-bold sm:text-3xl text-xl text-yellow-200">{artistId ? artist?.name : songData?.title}</p>
