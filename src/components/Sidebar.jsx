@@ -28,7 +28,12 @@ const Sidebar = () => {
   return (
     <>
       <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-blue-700 outline-none">
-        <img src={logo} alt="Logo" className="w-full h-14 object-contain" />
+        <div className="w-full flex justify-center items-center">
+          <div className="w-3/4 h-36 text-yellow-200 bg-blue-300 rounded-full border-4 border-yellow-200 p-5">
+            <img src={logo} alt="Logo" className="w-full h-14 object-contain mt-5" />
+            <p className="text-xl font-bold text-center">LibTune</p>
+          </div>
+        </div>
         <NavLinks />
       </div>
 
